@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "turtle_example", "turtle_ex
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hippomocks_example", "hippomocks_example\hippomocks_example.vcxproj", "{A86044BD-4D8D-4934-BC87-491F0D9A8186}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mockitnow_example", "mockitnow_example\mockitnow_example.vcxproj", "{8113F126-620C-4E5D-9F93-BEF98924EBA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,10 @@ Global
 		{A86044BD-4D8D-4934-BC87-491F0D9A8186}.Debug|Win32.Build.0 = Debug|Win32
 		{A86044BD-4D8D-4934-BC87-491F0D9A8186}.Release|Win32.ActiveCfg = Release|Win32
 		{A86044BD-4D8D-4934-BC87-491F0D9A8186}.Release|Win32.Build.0 = Release|Win32
+		{8113F126-620C-4E5D-9F93-BEF98924EBA6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8113F126-620C-4E5D-9F93-BEF98924EBA6}.Debug|Win32.Build.0 = Debug|Win32
+		{8113F126-620C-4E5D-9F93-BEF98924EBA6}.Release|Win32.ActiveCfg = Release|Win32
+		{8113F126-620C-4E5D-9F93-BEF98924EBA6}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,5 +9,8 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <atlbase.h>
 
 #include <gtest/gtest.h>
+#include <MockItNow/tstring.h>
+#include <MockItNow/MockItNow.h>
