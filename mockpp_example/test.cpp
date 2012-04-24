@@ -67,7 +67,7 @@ public:
 	mutable MOCKPP_NS::ConstraintList<std::string>		getResourcesAsJsonString_input;
 };
 
-TEST(DeviceResourceNetworkRepository, Positive)
+TEST(DeviceResourceNetworkRepository, GivenANetworkRepositoryWithResources_WhenRequested_ThenShouldReturnList)
 {
 	char *html = "[{\"domainName\" : \"1E\", \"netbiosName\" : \"testMachine\"}]";
 	MockHttpRestClient mockHttpClient;
@@ -84,7 +84,7 @@ TEST(DeviceResourceNetworkRepository, Positive)
 	EXPECT_STREQ("1E", resources[0].domainName.c_str());
 }
 
-TEST(DeviceResourceNetworkRepository, Negative) 
+TEST(DeviceResourceNetworkRepository, GivenAnEmptyNetworkRepository_WhenRequested_ThenShouldReturnNothing) 
 {
 	char *html = "";
 

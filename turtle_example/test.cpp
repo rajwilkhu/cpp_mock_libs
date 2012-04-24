@@ -50,28 +50,27 @@ MOCK_BASE_CLASS(MockHttpRestClient, IHttpRestClient)
 	MOCK_CONST_METHOD_EXT(getResourcesAsJsonString, 1, std::string(const std::string &), getResourcesAsJsonString)
 };
 
-TEST(DeviceResourceNetworkRepository, Positive)
+TEST(DeviceResourceNetworkRepository, GivenANetworkRepositoryWithResources_WhenRequested_ThenShouldReturnList)
 {
 	char *html = "[{\"domainName\" : \"1E\", \"netbiosName\" : \"testMachine\"}]";
 	MockHttpRestClient mockHttpClient;
 	DeviceResourceNetworkRepository repository(mockHttpClient);
 
-	//MOCK_EXPECT( mockHttpClient.getResourcesAsJsonString ).once().with("http://example.net/Devices").returns(std::string(html));
-	//MOCK_EXPECT(mockHttpClient.getResourcesAsJsonString("http://example.net/Devices")).returns(std::string(html));
+	MOCK_EXPECT( mockHttpClient.getResourcesAsJsonString ).once().with("http://example.net/Devices").returns(std::string(html));
 	
 	std::vector<DeviceResource> resources = repository.getAll("http://example.net/Devices");
 	EXPECT_EQ(1, resources.size());
 	EXPECT_STREQ("1E", resources[0].domainName.c_str());
 }
 
-TEST(DeviceResourceNetworkRepository, Negative) 
+TEST(DeviceResourceNetworkRepository, GivenAnEmptyNetworkRepository_WhenRequested_ThenShouldReturnNothing) 
 {
 	char *html = "";
 
 	MockHttpRestClient mockHttpClient;
 	DeviceResourceNetworkRepository repository(mockHttpClient);
 
-	//MOCK_EXPECT(mockHttpClient.getResourcesAsJsonString("http://example.net/Devices")).returns(std::string(html));
+	MOCK_EXPECT( mockHttpClient.getResourcesAsJsonString ).once().with("http://example.net/Devices").returns(std::string(html));
 
 	std::vector<DeviceResource> resources = repository.getAll("http://example.net/Devices");
 	EXPECT_EQ(0, resources.size());
